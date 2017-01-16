@@ -1,0 +1,210 @@
+﻿/* Styles go here */
+body {
+    margin: auto;
+    padding: 10px;
+}
+
+
+/*header css*/
+header h1 {
+    margin: auto;
+    text-align: center;
+}
+
+
+/*student data table css*/
+.tableCls, th, td {
+    margin: auto;
+    font-size: 10px;
+    border: 1px solid;
+    border-collapse: collapse;
+    padding-left: 2px;
+}
+
+    .tableCls tr:nth-child(4n) {
+        background-color: #f2f2f2;
+    }
+
+    .tableCls input {
+        font-size: 10px;
+        margin: 1px;
+    }
+
+.showDetailCls, .hideCls {
+    display: none;
+}
+
+.inputTxtCls {
+    font-size: 7px;
+}
+
+p{
+    margin:0px;
+    padding:0px;
+}
+#detailUl{
+    margin:0px;
+    padding-left:30px;
+}
+
+/*set table td width*/
+/*#firstname{
+    width:5%;
+}
+#lastname{
+    width:6%;
+}
+#email{
+    width:16%;
+}
+#location{
+    width:24%;
+}
+#phone{
+    width:10%;
+}
+#current_class{
+    width:3%;
+}
+#address_communication{
+    width:15%;
+}*/
+
+#ipFirstname{
+    max-width:40px;
+}
+#ipLastname{
+    max-width:40px;
+}
+#ipipEmail{
+    max-width:80px;
+}
+#ipipLocation{
+    max-width:120px;
+}
+#ipipPhone{
+    max-width:40px;
+}
+#ipCc{
+    max-width:15px;
+}
+
+
+
+
+/*add form table css*/
+.add_form_tableCls {
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+}
+
+    .add_form_tableCls td {
+        border: 0px;
+    }
+
+    .add_form_tableCls ul {
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+.required_starCls {
+    color: red;
+}
+
+.add_inputCls {
+    float: right;
+    width: 60%;
+}
+
+.add_btnCls {
+    float: right;
+    width: 45%;
+    margin-right: 20px;
+}
+
+.add_liCls {
+    clear: both;
+    padding: 3px;
+    list-style: none;
+}
+
+/*drag and drop location field*/
+#drag_drop_locationUl, #drag_drop_locationCls {
+    padding: 10px;
+    margin: 10px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    display: table-row;
+    border: 1px solid;
+}
+
+
+#add_location_td div {
+    border: 1px solid;
+    margin: 20px;
+    padding: 10px;
+}
+
+#add_location_td p {
+    margin-left: 20px;
+}
+
+/*Search box*/
+#searchDiv {
+    padding: 20px;
+    text-align: right;
+    margin-right: 10%;
+}
+
+.data {
+    display: none;
+}
+
+/*Show number of rows*/
+#dropdownDiv {
+    margin-left: 20%;
+    text-align: center;
+    z-index: 30;
+    border: 1px solid;
+    display: inline-block;
+}
+
+#show {
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    width: auto;
+    white-space: nowrap;
+    text-align: left;
+    text-decoration: none;
+}
+
+#hiddenDiv {
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    border: 1px solid;
+    background: #808080;
+}
+
+    #hiddenDiv a {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+    }
+
+        #hiddenDiv a:hover {
+            background: #49A3FF;
+            color: #FFF;
+        }

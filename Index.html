@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script data-require="jquery@*" data-semver="3.1.1" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script data-require="mustache.js@*" data-semver="0.7.2" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"></script>
+    <link rel="stylesheet" href="Style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Student Management System</h1>
+        <div>
+            <table class="add_form_tableCls">
+                <tr>
+                    <td>
+                        <form class="add_formCls">
+                            <ul>
+                                <li class="add_liCls">
+                                    <label>First Name<span class="required_starCls">*</span></label>
+                                    <input id="newFirstName" class="add_inputCls" type="text" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Last Name<span class="required_starCls">*</span></label>
+                                    <input id="newLastName" class="add_inputCls" type="text" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Email<span class="required_starCls">*</span></label>
+                                    <input id="newEmail" class="add_inputCls" type="text" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Location<span class="required_starCls">*</span></label>
+                                    <input id="new_add_drop_location" class="add_inputCls" type="text" placeholder="drag location to here" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Phone<span class="required_starCls">*</span></label>
+                                    <input id="newPhone" class="add_inputCls" type="text" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Current_class<span class="required_starCls">*</span></label>
+                                    <input id="newCurrent_class" class="add_inputCls" type="text" placeholder="input number" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Communication Address<span class="required_starCls">*</span></label>
+                                    <input id="newCommunicationAddr" class="add_inputCls" type="text" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Permanent Address<span class="required_starCls">*</span></label>
+                                    <input id="newPermanentAddr" class="add_inputCls" type="text" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Marks - English<span class="required_starCls">*</span></label>
+                                    <input id="newEnglishMark" class="add_inputCls" type="text" placeholder="input number" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Marks - Science<span class="required_starCls">*</span></label>
+                                    <input id="newScienceMark" class="add_inputCls" type="text" placeholder="input number" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Marks - Computers<span class="required_starCls">*</span></label>
+                                    <input id="newComputersMark" class="add_inputCls" type="text" placeholder="input number" />
+                                </li>
+                                <li class="add_liCls">
+                                    <label>Marks - hardware<span class="required_starCls">*</span></label>
+                                    <input id="newHardwareMark" class="add_inputCls" type="text" placeholder="input number" />
+                                </li>
+                                <li class="add_liCls">
+                                    <input id="btn_add_new" class="add_btnCls" type="button" value="Add" />
+                                </li>
+                            </ul>
+                        </form>
+                    </td>
+                    <!--<td class="add_locationCls">
+                        <p>City:</p>
+                        <input id="drag_drop_location_input" type="text" placeholder="input city name and enter"/>
+                        <ul id="drag_drop_locationUl">
+                            <template id="drag_drop_location">
+                                <li class="drag_drop_locationCls">
+                                    <a class="alocationCls" href="#" >{{location}}</a>
+                                </li>
+                            </template>
+                        </ul>
+                    </td>-->
+                    <td id="add_location_td">
+                        <p>Drag City to Location:</p>
+                        <div>
+                            <a class="alocation" href="#">New York</a>
+                            <a class="alocation" href="#">Shanghai</a>
+                            <a class="alocation" href="#">Pittsburgh</a>
+                            <a class="alocation" href="#">Los Angeles</a>
+                            <a class="alocation" href="#">Chicago</a>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+    </header>
+    <div id="dropdownDiv">
+        <a id="show" href="#">Select</a>
+        <div id="hiddenDiv">
+            <a id="20" href="#">20</a>
+            <a id="50" href="#">50</a>
+            <a id="100" href="#">100</a>
+        </div>
+    </div>
+    <div id="searchDiv">
+        Search:
+        <input id="search" type="text" placeholder="not achieve yet" />
+    </div>
+    <div>
+        <table class='tableCls' id="myTable">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>C_Class</th>
+                <th>Address</th>
+                <th>Options</th>
+            </tr>
+            <template id="myTemplate">
+                <tr class="data student">
+                    <td id="firstname"><span class="dataFieldCls">{{firstname}}</span><span><input id="ipFirstname" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td id="lastname"><span class="dataFieldCls">{{lastname}}</span><span><input id="ipLastname" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td id="email"><span class="dataFieldCls">{{email}}</span><span><input id="ipEmail" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td id="location"><span class="dataFieldCls">{{location}}</span><span><input id="ipLocation" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td id="phone"><span class="dataFieldCls">{{phone}}</span><span><input id="ipPhone" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td id="current_class"><span class="dataFieldCls">{{current_class}}th</span><span><input id="ipCc" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td id="address_communication"><span class="dataFieldCls">{{address.communication}}</span><span><input id="ipAddr" type="text" class="hideCls inputTxtCls" /></span></td>
+                    <td>
+                        <input type="button" id="btn_show_more_details" value="details" />
+                        <input type="button" id="btn_edit" class="edit btn_editCls" value="edit" />
+                        <input type="button" id="btn_save" class="edit btn_saveCls hideCls" localKey="{{id}}" value="save" />
+                        <input type="button" id="btn_cancel" class="edit btn_cancelCls hideCls" value="cancel" />
+                        <input type="button" id="btn_delete" localKey="{{id}}" value="delete" />
+                    </td>
+                </tr>
+                <tr class="showDetailCls MarksCls">
+                    <td colspan="8" id="marks">
+                        <p><strong>Marks</strong></p>
+                        <ul id="detailUl">
+                            <li>
+                                <p>
+                                    <strong>English: </strong>
+                                    <span class="dataFieldCls" id="marks_english">{{marks.english}}</span><span><input type="text" class="hideCls inputTxtCls" /></span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>Science: </strong>
+                                    <span class="dataFieldCls" id="marks_science">{{marks.science}}</span><span><input type="text" class="hideCls inputTxtCls" /></span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>Computers</strong>
+                                    <span class="dataFieldCls" id="marks_computers">{{marks.computers}}</span><span><input type="text" class="hideCls inputTxtCls" /></span>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>Hardware</strong>
+                                    <span class="dataFieldCls" id="marks_hardware">{{marks.hardware}}</span><span><input type="text" class="hideCls inputTxtCls" /></span>
+                                </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </template>
+        </table>
+    </div>
+</body>
+</html>
